@@ -1,10 +1,16 @@
-# Diffuse Logic Framework - Packages
+# Diffuse Logic Framework - Optional External Dependencies
 
-This folder contains zip files of the source code for the exact versions of the third-party repositories used by the framework.
+This folder (`ext/optional/`) contains locally cached copies of third-party repositories and pre-compiled binary tools used by the framework.
 
-**Purpose:**
-1. **Fallback/Backup:** It acts as a reliable backup in case the original GitHub repository is temporarily unavailable, removed, or the network goes down.
-2. **Build Accelerator:** It speeds up the initial CMake configuration significantly by allowing CPM to bypass the network download step entirely and use these local copies instead.
+## Structure
+
+* **`packages/`**: Contains `.zip` files of the source code for third-party libraries.
+  * **Fallback/Backup:** Acts as a reliable backup in case the original repository is temporarily unavailable or the network goes down.
+  * **Build Accelerator:** Speeds up the initial CMake configuration significantly by allowing CPM to bypass the network download step and use these local copies instead.
+
+* **`releases/`**: Contains pre-compiled binary releases (e.g., Slang compiler, GLEW binaries) as `.zip` files.
+  * The `.zip` files are tracked by Git, but any extracted folders are automatically ignored.
+  * Allows the build system to extract and use these pre-built tools without requiring manual internet downloads.
 
 **Note:**
-This folder (and its contents) is **totally optional**. If it doesn't exist or a zip is missing, the build system (CPM) will automatically fall back to downloading the requested version directly from GitHub.
+This entire folder (and its contents) is **totally optional**. If it doesn't exist or a zip is missing, the build system will automatically fall back to downloading the requested version directly from the web.
