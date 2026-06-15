@@ -1,6 +1,8 @@
 # Diffuse Logic Framework - Optional External Dependencies
 
 This folder (`ext/optional/`) contains locally cached copies of third-party repositories and pre-compiled binary tools used by the framework.
+All of these dependencies come from their original GitHub repositories. `ext-optional` is only a curated collection to speed up DL builds. 
+The same dependencies can also be obtained manually by going to their respective repositories and downloading them directly.
 
 ## Structure
 
